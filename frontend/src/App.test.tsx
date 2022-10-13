@@ -1,9 +1,25 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('<App />', () => {
+  it('has a following text label', () => {
+    render(<App />);
+    const el = screen.getByText(/Following/i);
+    expect(el).toBeTruthy();
+  });
+  it('has a followers text label', () => {
+    render(<App />);
+    const el = screen.getByText(/Followers/i);
+    expect(el).toBeTruthy();
+  });
+  it('has a you might like heading', () => {
+    render(<App />);
+    const el = screen.getByText(/You might like/i);
+    expect(el).toBeTruthy();
+  });
+  it('has a whats happening heading', () => {
+    render(<App />);
+    const el = screen.getByText(/Whats happening/i);
+    expect(el).toBeTruthy();
+  });
 });
